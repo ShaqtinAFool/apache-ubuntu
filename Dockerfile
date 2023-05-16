@@ -7,9 +7,9 @@ RUN apt install -y net-tools telnetd
 # Enable SSH
 RUN apt install -y --no-install-recommends dialog \
     && apt install -y --no-install-recommends openssh-server \
-    && echo "root:Docker!" | chpasswd
-    # && cd /etc/ssh/ \
-    # && ssh-keygen -A
+    && echo "root:Docker!" | chpasswd \
+    && cd /etc/ssh/ \
+    && ssh-keygen -A
 COPY sshd_config /etc/ssh/
 EXPOSE 2222
 
