@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 LABEL maintainer="tony"
 
 RUN apt update
-RUN apt install -y net-tools telnetd
+RUN apt install -y net-tools telnetd dnsutils
 
 # Enable SSH
 RUN apt install -y --no-install-recommends dialog \
